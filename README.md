@@ -5,7 +5,7 @@ We currently support OpenAI's GPT-2 XL (1.5B) and EleutherAI's GPT-J (6B). The r
 
 Feel free to open an issue if you find any problems; we are actively developing this repository and will monitor tickets closely.
 
-[![Colab ROME Demo](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/kmeng01/rome/blob/main/notebooks/rome.ipynb)
+[![Colab ROME Demo](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/changlinli/rome/blob/main/notebooks/rome.ipynb)
 
 <p align="center">
     <img src="https://rome.baulab.info/images/eiftower-crop.svg" alt="causal tracing GIF" width="425px" />
