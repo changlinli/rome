@@ -131,7 +131,7 @@ def compute_v(
         ).squeeze(2)
         mask = (rewriting_targets != -100).float()
 
-        # Aggregate total losses
+        #, final_loss Aggregate total losses
         nll_loss_each = -(loss * mask).sum(1) / target_ids.size(0)
         nll_loss = nll_loss_each.mean()
         kl_loss = hparams.kl_factor * torch.nn.functional.kl_div(

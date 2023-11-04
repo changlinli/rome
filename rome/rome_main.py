@@ -8,7 +8,7 @@ from util import nethook
 from util.generate import generate_fast
 
 from .compute_u import compute_u
-from .compute_v import compute_v
+from .compute_v import compute_v, compute_v_return_loss
 from .rome_hparams import ROMEHyperParams
 
 CONTEXT_TEMPLATES_CACHE = None
@@ -100,7 +100,7 @@ def execute_rome(
             get_context_templates(model, tok, hparams.context_template_length_params),
         )
         print("Left vector shape:", left_vector.shape)
-        right_vector: torch.Tensor = compute_v(
+        right_vector, loss = compute_v_return_loss(
             model,
             tok,
             request,
@@ -109,6 +109,8 @@ def execute_rome(
             left_vector,
             get_context_templates(model, tok, hparams.context_template_length_params),
         )
+        model.final_loss = loss
+        print(f"{(right_vector, loss)}=")
         print("Right vector shape:", right_vector.shape)
 
         with torch.no_grad():
